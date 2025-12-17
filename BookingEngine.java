@@ -5,7 +5,7 @@ class BookingEngine extends Train{
 	void bookTicket(int n, User user)
 	{
 		Train t = TrainScheduler.getTrainList().get(n);
-		System.out.println("******************TICKET BOOKED*****************");
+		System.out.println("******************TICKET SUCCESSFULLY BOOKED!!*****************");
 		System.out.println("From "+t.getStartCity());
 		System.out.println("To "+t.getEndCity());
 		int seats = t.getNumberOfSeats()-1;
