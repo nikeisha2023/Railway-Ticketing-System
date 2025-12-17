@@ -24,7 +24,7 @@ class BookingSystem
 		{
 			HashMap<Integer,Train> tt = enquiry();
 			if(tt.isEmpty())
-				 System.out.println("No trains exists for the given information");
+				 System.out.println("Sorry, there's no trains exists for the given information");
 			
 			return 0;  // why?
 		}
