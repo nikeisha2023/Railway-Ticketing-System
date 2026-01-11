@@ -1,8 +1,6 @@
 
 public class Ticket extends BookingEngine {
 
-	private String startCity;
-	private String endCity;
 	private int bookingNumber;
 	private static int bookingNumberGenerator = 0;
 	private double fare;
@@ -13,14 +11,6 @@ public class Ticket extends BookingEngine {
 
 	protected void setFare(Double double1) {
 		this.fare = double1;
-	}
-
-	public String getStartCity() {
-		return startCity;
-	}
-
-	public String getEndCity() {
-		return endCity;
 	}
 
 	public int getBookingNumber() {
@@ -34,14 +24,6 @@ public class Ticket extends BookingEngine {
 
 	Ticket() {
 		bookingNumber = getNextBookingNumber();
-	}
-
-	protected void setStartCity(String startCity) {
-		this.startCity = startCity;
-	}
-
-	protected void setEndCity(String endCity) {
-		this.endCity = endCity;
 	}
 
 }
