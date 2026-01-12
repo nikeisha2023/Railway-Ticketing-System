@@ -16,6 +16,11 @@ public class PaymentEngine {
 		
 	}
 
+	public void refundBalance(Train t, User user) {
+		user.debitBalance += t.getTrainFare();
+		System.out.println("Refund of " + t.getTrainFare() + 
+		" has been credited due to booking failure");
+	}
 
 	public void processRefund(User user, Ticket t) {
 		System.out.println("Amount of "+t.getFare()+" has been credited to the user's account");

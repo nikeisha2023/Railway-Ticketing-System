@@ -1,7 +1,7 @@
 
 class BookingEngine extends Train {
 
-	synchronized void bookTicket(int n, User user) {
+	synchronized void bookTicket(int n, User user) throws Exception {
 		Train t = TrainScheduler.getTrainList().get(n);
 		System.out.println("******************TICKET SUCCESSFULLY BOOKED!!*****************");
 		System.out.println("From " + t.getStartCity());

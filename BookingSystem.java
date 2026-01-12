@@ -51,7 +51,13 @@ class BookingSystem
 							
 							if(Pengine.deductBalance(t,user))
 							{
-								Bengine.bookTicket(n,user);
+								try {
+									Bengine.bookTicket(n,user);
+								}
+								catch(Exception e) {
+									Pengine.refundBalance(t,user);
+									System.out.println("Booking failed: " + e.getMessage());
+								}
 							}
 							else
 								System.out.println("Booking failed. User has insufficient balance.");
