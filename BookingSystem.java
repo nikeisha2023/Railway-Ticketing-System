@@ -43,7 +43,12 @@ class BookingSystem {
 								paymentEngine = new PaymentEngine();
 
 							if (paymentEngine.deductBalance(t, user)) {
-								bookingEngine.bookTicket(n, user);
+								try {
+									bookingEngine.bookTicket(n, user);
+								} catch (Exception e) {
+									paymentEngine.refundBalance(t, user);
+									System.out.println("Booking failed: " + e.getMessage());
+								}
 							} else
 								System.out.println("Booking failed. User has insufficient balance.");
 						} else {
@@ -69,7 +74,6 @@ class BookingSystem {
 			enquiryEngine = new EnquiryEngine();
 
 		HashMap<Integer, Train> t = enquiryEngine.enquire();
-
 		return t;
 
 	}
