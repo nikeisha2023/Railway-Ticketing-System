@@ -8,11 +8,11 @@ public class TrainScheduler {
 		trainList = new HashMap<Integer,Train>();
 	}
 
-	public static HashMap<Integer, Train> getTrainList() {
+	public static synchronized HashMap<Integer, Train> getTrainList() {
 		return trainList;
 	}
 
-	public static void setTrainList(Train train) {
+	public static synchronized void setTrainList(Train train) {
 		
 		trainList.put(train.getTrainNumber(), train);
 	}

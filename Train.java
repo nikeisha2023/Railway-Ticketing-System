@@ -24,11 +24,11 @@ class Train {
 	private int trainNumber;
 	private int numberOfSeats;
 
-	public int getNumberOfSeats() {
+	public synchronized int getNumberOfSeats() {
 		return numberOfSeats;
 	}
 
-	protected void setNumberOfSeats(int numberOfSeats) {
+	protected synchronized void setNumberOfSeats(int numberOfSeats) {
 		this.numberOfSeats = numberOfSeats;
 	}
 
